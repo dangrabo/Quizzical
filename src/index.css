@@ -1,3 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 * {
   box-sizing: border-box;
 }
+
+body {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  height: 100vh;
+  margin: auto;
+  color: #293264;
+  font-family: 'Inter', sans-serif;
+  background-image: url('/bg2.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.answers {
+  display: flex;
+  gap: 2rem;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+label {
+  display: inline-block;
+  padding: 5px 20px;
+  border: 1px solid #293264; 
+  background-color: transparent;
+  color: #293264;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+input[type="radio"]:checked + label {
+  background-color: #b1beff ; 
+  border: 1px solid #b1beff; 
+  color: #4c1d95; 
+}
+
+label:hover {
+  background-color: rgba(139, 92, 246, 0.1);
+}
+
+hr {
+  border: none;
+  border-top: 1px solid grey;
+  margin: 30px auto;
+}
+
+.correct {
+ background-color: #94D7A2;
+ border: none;
+}
+
+.incorrect {
+  background-color: #F8BCBC;
+  border: none;
+  opacity: 0.6;
+}
+
+.opaque {
+  opacity: 0.6;
+}
+
+.check-again-btn {
+  display: block;
+  margin: auto;
+  color: white;
+  background-color: #4D5B9E;
+  border: none;
+  border-radius: 15px;
+  padding: 15px 30px
+  
+}
+
+#play-again-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
