@@ -4,6 +4,7 @@ import Question from "./Question";
 
 function App() {
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
   const [showHome, setShowHome] = useState(true);
   const [questions, setQuestions] = useState(null);
   const [showAnswers, setShowAnswers] = useState(false);
@@ -20,10 +21,14 @@ function App() {
           const formattedQuestions = data.results.map(apiQuestion => formatQuestion(apiQuestion));
           console.log(formattedQuestions);
           setQuestions(formattedQuestions);
-        } 
+        }
+        else {
+          console.log('Error loading data');
+          setError(true);
+        }
         setLoading(false);
       });
-  }, [playCount]);
+  }, [playCount, error]);
 
   // generate question components in array
   let questionsCompArray;
@@ -88,14 +93,32 @@ function App() {
 
   function handleRestart() {
     setLoading(true);
+    setError(false);
     setShowAnswers(false);
     setPlayCount((prev) => prev + 1);
   }
 
+  // show loading screen
   if (loading) {
     return (
       <div id="home-div" className="main-container">
         <h1>Loading...</h1>
+      </div>
+    );
+  }
+
+  // show error screen
+  if (error) {
+    return (
+      <div id="home-div" className="main-container">
+        <h2>There was an error loading the quiz</h2>
+        <button
+          id="home-btn"
+          className="check-again-btn"
+          onClick={handleRestart}
+        >
+          Try Again
+        </button>
       </div>
     );
   }
