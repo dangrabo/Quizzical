@@ -165,9 +165,3 @@ function App() {
 }
 
 export default App;
-
-/* TODO:
-
-adjust functionality to check that all answers were selected before submitting form
-
-  */
