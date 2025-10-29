@@ -112,7 +112,7 @@ function App() {
     return (
       <div id="home-div" className="main-container">
         <h2>There was an error loading the quiz</h2>
-        <p>Please wait 30 seconds before trying again</p>
+        <p>Please wait 5-10 seconds before trying again</p>
         <button
           id="home-btn"
           className="check-again-btn"
