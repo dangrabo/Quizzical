@@ -59,7 +59,10 @@ function App() {
   }
 
   // check answers
-  function checkAnswers(formData) {
+  function checkAnswers(e) {
+    e.preventDefault();
+    const formData = new FormData(e.target)
+
     const selectedAnswers = [];
     for (let i = 0; i < 5; i++) {
       selectedAnswers.push(formData.get(`${i}`));
@@ -116,7 +119,7 @@ function App() {
   // show questions
   return (
     <div id="questions-div" className="main-container">
-      <form action={checkAnswers}>
+      <form onSubmit={checkAnswers}>
         {questionsCompArray}
         {!showAnswers ? (
           <button  className="check-again-btn m-auto">Check answers</button>
@@ -141,12 +144,6 @@ export default App;
 
 /* TODO:
 
-home screen styling
-Fix the styling on the bottom div after submitting answers
-fix fucntionality for play again button
 adjust functionality to check that all answers were selected before submitting form
-Clalculate the right answers
-move insert correct answer to app level and hold in state so that the order stays the same in the question comp
-
 
   */
