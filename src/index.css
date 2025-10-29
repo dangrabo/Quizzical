@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 
 * {
   box-sizing: border-box;
@@ -7,14 +7,33 @@
 body {
   display: flex;
   align-items: center;
+  justify-content: center;
   width: 50%;
   height: 100vh;
   margin: auto;
   color: #293264;
-  font-family: 'Inter', sans-serif;
-  background-image: url('/bg2.jpg');
+  font-family: "Inter", sans-serif;
+  background-image: url("/bg2.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+#home-div {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+h1 {
+  font-size: 72px;
+  margin: auto;
+}
+
+#home-btn {
+  font-size: 24px;
 }
 
 .answers {
@@ -29,7 +48,7 @@ input[type="radio"] {
 label {
   display: inline-block;
   padding: 5px 20px;
-  border: 1px solid #293264; 
+  border: 1px solid #293264;
   background-color: transparent;
   color: #293264;
   border-radius: 12px;
@@ -37,13 +56,14 @@ label {
   transition: all 0.3s ease;
 }
 
-input[type="radio"]:checked + label {
-  background-color: #b1beff ; 
-  border: 1px solid #b1beff; 
-  color: #4c1d95; 
+input[type="radio"]:checked + label.while-selecting {
+  background-color: #b1beff;
+  border: 1px solid #b1beff;
+  color: #4c1d95;
 }
 
-label:hover {
+
+.while-selecting:hover {
   background-color: rgba(139, 92, 246, 0.1);
 }
 
@@ -54,12 +74,12 @@ hr {
 }
 
 .correct {
- background-color: #94D7A2;
- border: none;
+  background-color: #94d7a2;
+  border: none;
 }
 
 .incorrect {
-  background-color: #F8BCBC;
+  background-color: #f8bcbc;
   border: none;
   opacity: 0.6;
 }
@@ -70,18 +90,21 @@ hr {
 
 .check-again-btn {
   display: block;
-  margin: auto;
   color: white;
-  background-color: #4D5B9E;
+  background-color: #4d5b9e;
   border: none;
   border-radius: 15px;
-  padding: 15px 30px
-  
+  padding: 15px 30px;
+}
+
+.m-auto {
+  margin: auto;
 }
 
 #play-again-div {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 3rem;
+  font-weight: 700;
 }
-
