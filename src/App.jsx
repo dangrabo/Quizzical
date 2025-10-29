@@ -19,7 +19,6 @@ function App() {
       .then((data) => {
         if (data.response_code == 0) {
           const formattedQuestions = data.results.map(apiQuestion => formatQuestion(apiQuestion));
-          console.log(formattedQuestions);
           setQuestions(formattedQuestions);
         }
         else {
